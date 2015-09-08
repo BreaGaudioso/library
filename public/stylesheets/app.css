@@ -1,0 +1,23 @@
+
+body{
+	background-color: #AA8F39;
+	color: #554100;
+	text-align: center;
+	background-image: url("../images/375332.jpg")
+}
+
+div{
+	text-align: left;
+	background-color: #FFEBAA;
+	color: #554100;
+	border: 2px solid black;
+	width:40%;
+	margin-left: 30%;
+	margin-left: 30%;
+	margin-top:20px;
+	padding: 5px;
+}
+
+.center{
+text-align: center;
+}

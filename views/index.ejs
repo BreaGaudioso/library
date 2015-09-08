@@ -1,0 +1,17 @@
+<html>
+<head><link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<title>Library</title>
+</head>
+<body>
+<div class="center" ><h1> Book Keeper</h1></div>
+	<% for (i=0; i < books.length; i++) { %>
+	<div>
+	<b>Book:</b>  <%= books[i].name %><Br>
+	<b>Author:</b>   <%= books[i].author %><br> 
+	Published in <%= books[i].year %> <Br>
+	Book ID: <%=books[i].id%><br>
+	<a href="/books/<%=books[i].id%>"> Edit/Delete </a> 
+	</div>
+	<% } %>
+</body>
+</html>

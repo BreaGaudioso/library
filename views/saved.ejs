@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"> 
+</head>
+<body>
+  <Br><Br>
+    <div>
+     <h1>
+       <%=book.name%></h1> 
+     </div>
+     <div>
+       <b>Book:</b>  <%= book.name %><Br>
+       <b>Author:</b>   <%= book.author %><br> 
+       Published in <%= book.year %> <Br>
+     </div>
+
+
+     <form action="/books/<%= book.id%>?_method=put" method="POST">
+
+      <div class="center"><h1>Fix a book</h1>
+        <input type="text" name="title" value= <%= book.name %> ><br/>
+        <input type="text" name="author" value=  <%= book.author %> > <br/>
+        <input type="text" name="year" value= <%= book.year %> ><br/>
+        <input class="center" type ="submit"> </div>
+      </form>
+
+      <div class="center"> 
+        <form id='deleteBook' action = "/books/<%= book.id %>?_method=delete" method='POST'>
+          <button type="submit"> Delete </button>
+        </form>
+      </div>
+    </body>
+    </html>
