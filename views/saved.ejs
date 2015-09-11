@@ -11,25 +11,34 @@
        <%=book.name%></h1> 
      </div>
      <div>
-       <b>Book:</b>  <%= book.name %><Br>
-       <b>Author:</b>   <%= book.author %><br> 
-       Published in <%= book.year %> <Br>
-     </div>
+      <b>Book:</b>  <%= books[i].title %> <br/>
+      <img src="<%= books[i].cover %>" > <br/>
+      <b>Author:</b>   <%= books[i].authors %><br/>
+      <b>Published:</b> <%= books[i].year %> <br/>
+      <b>Rating: </b> <%= books[i].rate%> <br/>
+      <b>Price: </b> <%= books[i].price %><br/>
+      <b>ISBN: </b> <%= books[i].isbn %><br/>
+    </div>
 
 
-     <form action="/books/<%= book.id%>?_method=put" method="POST">
+
+    <form action="/books/<%= book.id%>?_method=put" method="POST">
 
       <div class="center"><h1>Fix a book</h1>
-        <input type="text" name="title" value= <%= book.name %> ><br/>
-        <input type="text" name="author" value=  <%= book.author %> > <br/>
-        <input type="text" name="year" value= <%= book.year %> ><br/>
-        <input class="center" type ="submit"> </div>
-      </form>
+       <input type="text" name="title" placeholder="title"/><Br>
+       <input type="text" name="authors" placeholder="author"/> <Br>
+       <input type="text" name="year" placeholder="year published"/><Br>
+       <input type="text" name="rate"  placeholder="rating"/><Br>
+       <input type="text" name="price" placeholder="price" /><Br>
+       <input type="text" name="isbn" placeholder="isbn" /><Br>
+       <input type="text" name="cover" placeholder="cover"/><Br>
+       <input class="center" type ="submit"> </div>
+     </form>
 
-      <div class="center"> 
-        <form id='deleteBook' action = "/books/<%= book.id %>?_method=delete" method='POST'>
-          <button type="submit"> Delete </button>
-        </form>
-      </div>
-    </body>
-    </html>
+     <div class="center"> 
+      <form id='deleteBook' action = "/books/<%= book.id %>?_method=delete" method='POST'>
+        <button type="submit"> Delete </button>
+      </form>
+    </div>
+  </body>
+  </html>

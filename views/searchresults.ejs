@@ -1,0 +1,31 @@
+<html>
+<head><link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+  <title>Library</title>
+</head>
+<body>
+<div class="center" ><h1> Your Search results!</h1></div>
+  <% for (i=0; i < books.length; i++) { %>
+  <div>
+  <b>Book:</b>  <%= books[i].title %><br/>
+  <img src= <%= books[i].cover %> > <br/>
+  <b>Author:</b>   <%= books[i].authors %><br/>
+  <b>Published:</b> <%= books[i].year %> <br/>
+  <b>Rating: </b> <%= books[i].rate%> <br/>
+  <b>Price: </b> <%= books[i].price %><br/>
+  <b>ISBN: </b> <%= books[i].isbn %><br/>
+
+  <form method= "post" action="/books">
+<input type="hidden" name="title" value="<%= books[i].title %>" ><br/>
+<input type="hidden" name="cover" value="<%= books[i].cover %>"><br/>
+<input type="hidden" name="authors" value="<%= books[i].authors %>"><br/>
+<input type="hidden" name="year" value="<%= books[i].year %>"><br/>
+<input type="hidden" name="rate"  value="<%= books[i].rate %>"><br/>
+<input type="hidden" name="price" value="<%= books[i].price %>"><br/>
+<input type="hidden" name="isbn" value="<%= books[i].isbn %>"><br/>
+  <button class="center" type ="submit">Buy!</button></form>
+  </div>
+  <% } %>
+  <Div>
+      <a href="/"> New Search </a> </div>
+</body>
+</html>
