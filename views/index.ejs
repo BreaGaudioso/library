@@ -4,7 +4,7 @@
 </head>
 <body>
 <div class="center" ><h1> Book Keeper</h1></div>
-<div class= 'center'><a href="/">Search for a book</a>  or  <a href="/books/new">Add a new book</a>	</div>
+<div class= 'center'><a href="/search">Search for a book</a>  or  <a href="/books/new">Add a new book</a>	</div>
 	<% for (i=0; i < books.length; i++) { %>
 	<div>
 	 <b>Book:</b>  <%= books[i].title %> <br/>
@@ -13,9 +13,11 @@
       <b>Published:</b> <%= books[i].year %> <br/>
       <b>Rating: </b> <%= books[i].rate%> <br/>
       <b>Price: </b> <%= books[i].price %><br/>
-      <b>ISBN: </b> <%= books[i].isbn %><br/>
-	<a href="/books/<%=books[i].id%>"> Edit/Delete </a> 
+	<a href="/books/<%=books[i].id%>"> Edit/Delete </a><br/>
 	</div>
 	<% } %>
+  <div>
+  <a href="/logout">Logout</a>
+  </div>
 </body>
 </html>
